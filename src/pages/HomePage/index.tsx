@@ -1,8 +1,13 @@
 import { useEffect, useRef, useState } from 'react'
 import { HeaderNav } from '../../components/HeaderNav'
 import { Target } from '../../components/Target'
+import { Card } from '../../components/Card'
 import './index.less'
-import icon from './images/icon.jpg'
+import icon from './images/icon.jpg' //头像
+import sketch from './images/icons/sketch.png' //源码
+import code from './images/icons/code.png' //
+import startup from './images/icons/startup.png'
+import github from './images/icons/github.png'
 export const HomePage: React.FC = () => {
     const content = useRef<HTMLElement>(null)
     const arrowDown = () => {
@@ -68,6 +73,37 @@ export const HomePage: React.FC = () => {
             color: '#80c8f8'
         },
     ]
+    const cardList: {
+        icon: string;
+        title: string;
+        text: string;
+        route: string
+    }[] = [
+            {
+                icon: sketch,
+                title: '文章',
+                text: '学习不同的知识，领会不同的逻辑',
+                route: '/article'
+            },
+            {
+                icon: code,
+                title: '源码分析',
+                text: '从0到1,构建属于自己的mini源码',
+                route: '/socureCode'
+            },
+            {
+                icon: startup,
+                title: '在线工具',
+                text: '网页版在线工具',
+                route: '/util'
+            },
+            {
+                icon: github,
+                title: 'github',
+                text: '发现更多优质项目',
+                route: 'https://github.com/sakura1227'
+            }
+        ]
     return (
         <div className="home-page">
             <div className="animate__animated animate__fadeInDown home-cover">
@@ -93,7 +129,10 @@ export const HomePage: React.FC = () => {
                 <section className="main-content">
                     {/* 左侧卡片区 */}
                     <div className="content-left">
-                        
+                        {
+                            cardList.map((card) => <Card {...card} />)
+                        }
+
                     </div>
                     {/* 右侧个人介绍 */}
                     <div className="content-right">
@@ -108,8 +147,8 @@ export const HomePage: React.FC = () => {
                             <div className="title-text">
                                 <p>Sakura 个人博客</p>
                                 <p>一个前端二五仔</p>
-                                <p>提供多种源码分析</p>
-                                <p>提供多种站内工具</p>
+                                <p>沉迷源码分析</p>
+                                <p>收集多种站内工具</p>
                             </div>
                         </div>
                         <hr style={{ opacity: .5 }} />
@@ -128,7 +167,7 @@ export const HomePage: React.FC = () => {
                 </section>
             </main>
             {/* 底部 */}
-            <footer style={{height:'500px'}}></footer>
+            <footer style={{ height: '200px' }}></footer>
         </div>
     )
 }

@@ -2,6 +2,7 @@ import { Navigate, RouteObject } from 'react-router-dom'
 import { HomePage } from '../pages/HomePage'
 import { ArticlePage } from '../pages/ArticlePage'
 import { SocureCodePage } from '../pages/SocureCodePage'
+import {UtilPage} from '../pages/UtilPage'
 export const routes: RouteObject[] = [
     {
         path: '/',
@@ -18,5 +19,9 @@ export const routes: RouteObject[] = [
     {
         path: '/socureCode',
         element: <SocureCodePage />
+    },
+    {
+        path: '/util',
+        element: <UtilPage />
     }
 ]
