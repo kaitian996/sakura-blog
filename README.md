@@ -15,6 +15,8 @@ the terminal will throw err :
 ```shell
 failed to load config from E:\sakura-blog\vite.config.ts
 error when starting dev server:
+TypeError [ERR_UNKNOWN_FILE_EXTENSION]: Unknown file extension ".json" for E:\sakura-blog\node_modules\shiki\themes\github-dark.json
+    at new NodeError (node:internal/errors:371:5)
     at Object.file: (node:internal/modules/esm/get_format:72:15)
     at defaultGetFormat (node:internal/modules/esm/get_format:85:38)
     at defaultLoad (node:internal/modules/esm/load:13:42)
@@ -27,7 +29,7 @@ error when starting dev server:
 ```
 this means the vite can not resolve json module ,but I had set
 
- `    "resolveJsonModule": true` 
+ `"resolveJsonModule": true` 
 
 in 
 
