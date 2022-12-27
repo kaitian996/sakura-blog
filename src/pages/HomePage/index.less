@@ -1,0 +1,193 @@
+.home-page {
+    box-sizing: border-box;
+    background: #f3f6f7;
+
+    .home-cover {
+        height: 100vh;
+        background: url("./images/cover.jpg") 0% 0% / cover;
+        animation-duration: .7s;
+        animation-timing-function: ease;
+        animation-delay: 0s;
+        animation-iteration-count: 1;
+        animation-direction: normal;
+        animation-fill-mode: none;
+        animation-play-state: running;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        color: #fff;
+
+        .cover-word {
+            height: 100px;
+            box-sizing: border-box;
+            text-align: center;
+            font-family: Kanit;
+            color: #fff;
+
+            .word-top {
+                height: 50%;
+                font-size: 2.5rem;
+                margin: 0;
+                text-shadow: 0 3px 6px rgb(0 0 0 / 30%);
+            }
+
+            .word-bottom {
+                font-size: 1.5rem;
+                font-family: " Noto Serif SC", STZhongsong, Roboto, serif;
+                height: 50%;
+                margin-top: 5px;
+                text-shadow: 0 3px 6px rgb(0 0 0 / 30%);
+
+                @keyframes change {
+                    from {
+                        opacity: 1
+                    }
+
+                    to {
+                        opacity: 0
+                    }
+                }
+
+                .input-split {
+                    animation-duration: 1.5s;
+                    animation-timing-function: ease;
+                    animation-delay: 0s;
+                    animation-iteration-count: infinite;
+                    animation-direction: normal;
+                    animation-fill-mode: none;
+                    animation-play-state: running;
+                    animation-name: change;
+                    margin-left: 5px;
+                }
+            }
+        }
+
+        @keyframes bounce {
+
+            0%,
+            7%,
+            25%,
+            36%,
+            45%,
+            50% {
+                animation-timing-function: ease-out;
+                transform: translate3d(0, 0, 0);
+            }
+
+            15%,
+            16% {
+                animation-timing-function: ease-in;
+                transform: translate3d(0, -2px, 0);
+            }
+
+            30% {
+                animation-timing-function: ease-in;
+                transform: translate3d(0, -1px, 0);
+            }
+        }
+
+        .arrow-down {
+            font-size: 30px;
+            animation-duration: 4s;
+            animation-timing-function: ease;
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+            animation-direction: normal;
+            animation-fill-mode: none;
+            animation-play-state: running;
+            animation-name: bounce;
+            margin-bottom: 65px;
+        }
+    }
+
+    .home-content {
+        min-height: 1000px;
+        animation-duration: 1s;
+        animation-timing-function: ease;
+
+        .main-content {
+            padding-top: 15px;
+            width: 90%;
+            margin: 0 auto;
+            box-sizing: border-box;
+            min-height: 500px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+
+            .content-left {
+                width: 70%;
+                min-height: 1000px;
+                background: #fff;
+            }
+
+            .content-right {
+                position: sticky;
+                top: 0;
+                padding-top: 3%;
+                width: 25%;
+                min-height: 500px;
+                background-color: #fff;
+                border: 1px solid #f3f6f7;
+                font-family: " Noto Serif SC", STZhongsong, Roboto, serif;
+
+                .title-bar {
+                    text-align: center;
+                    // text-shadow: 1px 1px 1px black;
+                    .title-icon {
+                        img {
+                            width: 96px;
+                            height: 96px;
+                            max-width: 100%;
+                            border-radius: 999px;
+                            box-shadow: 0 0 10px #0003;
+                        }
+                    }
+
+                    .title-name {
+                        font-size: 30px;
+                        margin-top: 10px;
+                        color: #084f91;
+                        user-select: none;
+
+                    }
+
+                    .title-text {
+                        font-size: 20px;
+                        color: rgb(91, 89, 89);
+                        user-select: none;
+                    }
+                }
+
+                .des-bar {
+                    box-sizing: border-box;
+                    padding: 5px 10px;
+                    padding-bottom: 30px;
+                    .des-target {
+                        margin-left: 10px;
+                        margin-bottom: 5px;
+
+                        .target-icon {
+                            position: relative;
+                            top: -1px;
+                            vertical-align: middle;
+                            margin-right: 4px;
+                        }
+                    }
+
+                    .target-container {
+                        display: flex;
+                        justify-content: space-evenly;
+                        flex-wrap: wrap;
+                        max-width: 100%;
+
+                        .target {
+                            margin-right: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
