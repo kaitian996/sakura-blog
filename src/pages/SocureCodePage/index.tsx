@@ -1,6 +1,11 @@
 import './index.less'
 import { HeaderNav } from '../../components/HeaderNav'
+import { useNavigate } from 'react-router-dom'
 export default () => {
+    const router = useNavigate()
+    const toDetail = (name: string) => {
+        router(`/detail?name=${name}`)
+    }
     const tagetList = [
         {
             assert: '前端框架',
@@ -26,7 +31,7 @@ export default () => {
                     icon: 'https://cdn.docschina.org/home/logo/webpack-offical.svg'
                 },
                 {
-                    title: 'Mini-babel',
+                    title: 'Mini-Babel',
                     des: '对babel的最小主体复现，完整主要流程和功能。',
                     icon: 'https://cdn.docschina.org/home/logo/babel.png'
                 },
@@ -87,7 +92,7 @@ export default () => {
                                     {
                                         taget.items.map(item => {
                                             return (
-                                                <div className="code-content" key={item.title}>
+                                                <div className="code-content" key={item.title} onClick={()=>toDetail(item.title)}>
                                                     {/* 图标 和文字*/}
                                                     <div className="code-icon">
                                                         <img src={item.icon} alt="" />

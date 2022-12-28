@@ -19,10 +19,17 @@
         align-items: center;
         justify-content: space-between;
         list-style: none;
+        .github{
+            a{
+                text-decoration: none;
+            }
+            svg{
 
+            }
+        }
         .nav-item {
             text-align: center;
-            font-size: 400;
+            font-size: 500;
             position: relative;
             display: inline-block;
             margin-right: 20px;
@@ -40,6 +47,14 @@
             &:hover::after{
                 left: 0;
                 width: 100%;
+            }
+            &:last-child{
+                &::after{
+                    display: none;
+                }
+                &:hover::after{
+                 display: none;
+                }
             }
         }
 
