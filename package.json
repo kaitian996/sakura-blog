@@ -12,6 +12,7 @@
     "@code-hike/mdx": "^0.7.4",
     "@mdx-js/rollup": "^2.2.1",
     "animate.css": "^4.1.1",
+    "nprogress": "^0.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.6.1",
@@ -19,6 +20,7 @@
   },
   "devDependencies": {
     "@types/node": "^18.11.18",
+    "@types/nprogress": "^0.2.0",
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",
     "@vitejs/plugin-react": "^2.2.0",

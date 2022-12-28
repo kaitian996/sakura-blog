@@ -1,9 +1,9 @@
-import Content from './hello.mdx'
-
-export const SocureCodePage: React.FC = () => {
+import './index.less'
+import { HeaderNav } from '../../components/HeaderNav'
+export default () => {
     return (
-        <div style={{ width: '90vw',height:'100vh', margin: '0 auto' }}>
-            <Content rows={2} />
+        <div>
+            <HeaderNav />
         </div>
     )
 }

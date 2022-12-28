@@ -8,7 +8,7 @@ import sketch from './images/icons/sketch.png' //源码
 import code from './images/icons/code.png' //
 import startup from './images/icons/startup.png'
 import github from './images/icons/github.png'
-export const HomePage: React.FC = () => {
+export default () => {
     const content = useRef<HTMLElement>(null)
     const arrowDown = () => {
         content.current?.scrollIntoView({
@@ -106,7 +106,7 @@ export const HomePage: React.FC = () => {
         ]
     return (
         <div className="home-page">
-            <div className="animate__animated animate__fadeInDown home-cover">
+            <div className="home-cover">
                 {/* 头部Nav */}
                 <HeaderNav />
                 {/* 中间修饰 */}
@@ -130,7 +130,7 @@ export const HomePage: React.FC = () => {
                     {/* 左侧卡片区 */}
                     <div className="content-left">
                         {
-                            cardList.map((card) => <Card {...card} />)
+                            cardList.map((card) => <Card key={card.title} {...card} />)
                         }
 
                     </div>
@@ -146,8 +146,7 @@ export const HomePage: React.FC = () => {
                             </div>
                             <div className="title-text">
                                 <p>Sakura 个人博客</p>
-                                <p>一个前端二五仔</p>
-                                <p>沉迷源码分析</p>
+                                <p>源码分析</p>
                                 <p>收集多种站内工具</p>
                             </div>
                         </div>
@@ -159,7 +158,7 @@ export const HomePage: React.FC = () => {
                             </div>
                             <div className="target-container">
                                 {
-                                    targetList.map(target => <div className="target"><Target text={target.text} color={target.color}></Target></div>)
+                                    targetList.map(target => <div className="target" key={target.text}><Target text={target.text} color={target.color}></Target></div>)
                                 }
                             </div>
                         </div>

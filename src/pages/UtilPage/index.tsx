@@ -1,4 +1,4 @@
-export const UtilPage:React.FC=()=>{
+export default () => {
     return (
         <div>
             utils

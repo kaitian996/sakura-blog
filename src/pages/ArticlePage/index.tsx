@@ -1,5 +1,5 @@
 
-export const ArticlePage: React.FC = () => {
+export default () => {
     return (
         <div>
             article

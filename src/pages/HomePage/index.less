@@ -1,7 +1,17 @@
 .home-page {
     box-sizing: border-box;
-    background: #f3f6f7;
-
+    background-color: #FFDEE9;
+    background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
+    @keyframes fadeInCover {
+        from{
+            opacity: .5;
+            transform: translateY(-10px);
+        }
+        to{
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
     .home-cover {
         height: 100vh;
         background: url("./images/cover.jpg") 0% 0% / cover;
@@ -12,6 +22,7 @@
         animation-direction: normal;
         animation-fill-mode: none;
         animation-play-state: running;
+        animation-name: fadeInCover;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -131,9 +142,12 @@
                 background-color: #fff;
                 border: 1px solid #f3f6f7;
                 font-family: " Noto Serif SC", STZhongsong, Roboto, serif;
+                border-radius: 20px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 
                 .title-bar {
                     text-align: center;
+
                     // text-shadow: 1px 1px 1px black;
                     .title-icon {
                         img {
@@ -164,6 +178,7 @@
                     box-sizing: border-box;
                     padding: 5px 10px;
                     padding-bottom: 30px;
+
                     .des-target {
                         margin-left: 10px;
                         margin-bottom: 5px;
@@ -182,10 +197,35 @@
                         flex-wrap: wrap;
                         max-width: 100%;
                         font-family: serif;
+
                         .target {
                             margin-right: 5px;
                         }
                     }
+                }
+            }
+        }
+    }
+}
+
+//手机端
+@media screen and (max-width: 768px) {
+    .home-page {
+        .home-content {
+
+            .main-content {
+                width: 100%;
+                display: block;
+                .content-left {
+                    margin: 0 auto;
+                    display: flex;
+                    flex-direction: column;
+                    align-items:center;
+                    justify-content: flex-start;
+                }
+                .content-right{
+                    width: 70%;
+                    margin: 0 auto;
                 }
             }
         }
