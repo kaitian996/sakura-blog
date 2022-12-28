@@ -1,20 +1,77 @@
 .detail-page {
     box-sizing: border-box;
     display: flex;
-    height: 100vh;
+    align-items: flex-start;
     position: relative;
 
     .left-menu {
-        height: 100%;
+        height: 100vh;
+
+        &::-webkit-scrollbar {
+            height: 0;
+            width: 0;
+        }
+
         background-color: #fff;
         width: 30%;
         border-right: 1px solid #f1f3f5;
         transition: all .5s ease-in-out;
+        overflow: auto;
+        color: #fff;
+
+        .menu-title {
+            height: 50px;
+            background: #3eaf7c;
+            box-sizing: border-box;
+            padding: 10px 15px;
+            display: flex;
+            overflow: hidden;
+
+            .title {
+                flex: none;
+                line-height: 30px;
+                font-weight: 600;
+            }
+        }
+
+        .menu-item {
+            height: 40px;
+            box-sizing: border-box;
+            padding: 10px 15px;
+            padding-left: 30px;
+            display: flex;
+            color: #364149;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #fafafa;
+            }
+
+            .item {
+                max-width: 100%;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                font-size: 14px;
+                flex: none;
+                line-height: 20px;
+            }
+
+            .item-active {
+                color: #008cff;
+            }
+        }
     }
 
     .right-content {
         width: 65%;
         flex-grow: 1;
+        height: 100vh;
+        overflow: auto;
+
+        &::-webkit-scrollbar {
+            height: 0;
+            width: 0;
+        }
 
         .content-top-bar {
             background: #fff;
@@ -43,8 +100,8 @@
                 width: 100px;
                 line-height: 50px;
                 top: 50%;
-                left: calc((100% - 20px )/ 2);
-                transform: translate(-50% ,-50%);
+                left: calc((100% - 20px)/ 2);
+                transform: translate(-50%, -50%);
             }
 
 
@@ -80,8 +137,7 @@
 
             .content-top-bar {}
 
-            .content-mdx {
-            }
+            .content-mdx {}
         }
     }
 }

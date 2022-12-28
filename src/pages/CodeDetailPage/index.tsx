@@ -1,21 +1,14 @@
 import { useSearchParams } from "react-router-dom"
 import './index.less'
 import Mdx from './doc/hello.mdx'
+import { docMap } from './docMap'
 import { useState } from "react"
 import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons'
 export default () => {
     const [params] = useSearchParams()
-    const codeMap = [
-        {
-            title: 'Mini-React',
-            doc: [
-                {
-                    subtitle: '',
-                    mdx: Mdx
-                }
-            ]
-        }
-    ]
+    const currentDoc = docMap.find((item) => item.title === params.get('name'))
+    const [currentIndex, setCurrentIndex] = useState(0)
+
     const [openMenu, setOpenMenu] = useState(false)
     const clickNotPC = () => {
         const width = document.body.clientWidth
@@ -25,23 +18,43 @@ export default () => {
     }
     return (
         <main className="detail-page">
-            <section style={{ width: `${openMenu ? '300px' : 0}` }} className="left-menu">
+            <section style={{ width: `${openMenu ? document.body.clientWidth > 768 ? '300px' : '200px' : 0}` }} className="left-menu">
+                <div className="menu-title">
+                    <div className="title">
+                        {currentDoc?.title}
+                    </div>
+                </div>
+                {
+                    currentDoc?.doc.map((item, index) => {
+                        return (
+                            <div className="menu-item" onClick={() => {
+                                setCurrentIndex(index)
+                                clickNotPC()
+                            }}>
+                                <div className={`item ${currentIndex === index ? 'item-active' : ''}`}>
+                                    {item.subtitle}
+                                </div>
+                            </div>
+                        )
+                    })
+                }
 
             </section>
             <section className="right-content">
                 <div className="content-top-bar">
-                        <div className="open-icon" onClick={() => setOpenMenu(!openMenu)}>
-                            {
-                                openMenu ? [<MenuFoldOutlined />] : [<MenuUnfoldOutlined />]
-                            }
-                        </div>
-                        <div className="current-subtitle">
-                            这是标题
-                        </div>
+                    <div className="open-icon" onClick={() => setOpenMenu(!openMenu)}>
+                        {
+                            openMenu ? [<MenuFoldOutlined key={'in'} />] : [<MenuUnfoldOutlined key={'out'} />]
+                        }
+                    </div>
+                    <div className="current-subtitle">
+                        {currentDoc?.doc[currentIndex].subtitle}
+                    </div>
                 </div>
-                <div className="content-mdx" onClick={clickNotPC}>
+                <div key={'mdx'} className="content-mdx" onClick={clickNotPC}>
                     <Mdx ></Mdx>
                 </div>
+
             </section>
         </main >
     )

@@ -11,28 +11,24 @@
         }
     }
 
-    animation-duration: .7s;
-    animation-timing-function: ease;
-    animation-delay: 0s;
-    animation-iteration-count: 1;
-    animation-direction: normal;
-    animation-fill-mode: none;
-    animation-play-state: running;
-    animation-name: fadeInCover;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 500px;
-    background: url('./images/cover.jpg');
-    background-size: auto;
-    background-repeat: no-repeat;
-    background-position: 50% 35%;
-    color: #fff;
-
     .cover-content {
-        height: 100%;
         box-sizing: border-box;
         text-align: center;
         position: relative;
+        animation-duration: .7s;
+        animation-timing-function: ease;
+        animation-delay: 0s;
+        animation-iteration-count: 1;
+        animation-direction: normal;
+        animation-fill-mode: none;
+        animation-play-state: running;
+        animation-name: fadeInCover;
+        height: 500px;
+        background: url('./images/cover.jpg');
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-position: 35% 80%;
+        color: #fff;
 
         .cover-title {
             font-family: " Noto Serif SC", STZhongsong, Roboto, serif;
@@ -49,9 +45,9 @@
 
 @media screen and (max-width: 768px) {
     .article-page {
-        background-position: 37% 80%;
 
         .cover-content {
+            background-position: 37% 80%;
             .cover-title {
                 font-size: 45px !important;
             }
