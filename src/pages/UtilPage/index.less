@@ -1,0 +1,48 @@
+.util-page{
+    @keyframes fadeInCover {
+        from {
+            opacity: .5;
+            transform: translateY(-10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    animation-duration: .7s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+    animation-name: fadeInCover;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 500px;
+    background: url('./images/bg.jpg');
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: 50% 35%;
+    color: #fff;
+
+    .cover-content {
+        height: 100%;
+        box-sizing: border-box;
+        text-align: center;
+        position: relative;
+
+        .cover-title {
+            font-family: " Noto Serif SC", STZhongsong, Roboto, serif;
+            font-size: 70px;
+            font-weight: 400;
+            text-shadow: 1px 1px 1px rgb(79, 78, 78);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%);
+        }
+    }
+}

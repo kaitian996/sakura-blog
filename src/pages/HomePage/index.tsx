@@ -87,7 +87,7 @@ export default () => {
             },
             {
                 icon: code,
-                title: '源码分析',
+                title: '源码解析',
                 text: '从0到1,构建属于自己的mini源码',
                 route: '/socureCode'
             },
@@ -146,7 +146,7 @@ export default () => {
                             </div>
                             <div className="title-text">
                                 <p>Sakura 个人博客</p>
-                                <p>源码分析</p>
+                                <p>源码解析</p>
                                 <p>收集多种站内工具</p>
                             </div>
                         </div>
