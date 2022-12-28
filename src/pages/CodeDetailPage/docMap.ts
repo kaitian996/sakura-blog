@@ -1,4 +1,5 @@
 import Mdx from './doc/hello.mdx'
+import Mdx2 from './doc/hello2.mdx'
 
 export const docMap = [
     {
@@ -10,7 +11,7 @@ export const docMap = [
             },
             {
                 subtitle: 'ReactDOM1',
-                mdx: Mdx
+                mdx: Mdx2
             },
             {
                 subtitle: 'ReactDOM2',

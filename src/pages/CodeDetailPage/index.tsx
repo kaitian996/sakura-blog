@@ -1,6 +1,5 @@
 import { useSearchParams } from "react-router-dom"
 import './index.less'
-import Mdx from './doc/hello.mdx'
 import { docMap } from './docMap'
 import { useState } from "react"
 import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons'
@@ -8,7 +7,7 @@ export default () => {
     const [params] = useSearchParams()
     const currentDoc = docMap.find((item) => item.title === params.get('name'))
     const [currentIndex, setCurrentIndex] = useState(0)
-
+    const CurrentMDX = currentDoc?.doc[currentIndex].mdx
     const [openMenu, setOpenMenu] = useState(false)
     const clickNotPC = () => {
         const width = document.body.clientWidth
@@ -27,7 +26,7 @@ export default () => {
                 {
                     currentDoc?.doc.map((item, index) => {
                         return (
-                            <div className="menu-item" onClick={() => {
+                            <div className="menu-item" key={item.subtitle} onClick={() => {
                                 setCurrentIndex(index)
                                 clickNotPC()
                             }}>
@@ -52,7 +51,7 @@ export default () => {
                     </div>
                 </div>
                 <div key={'mdx'} className="content-mdx" onClick={clickNotPC}>
-                    <Mdx ></Mdx>
+                    {CurrentMDX && <CurrentMDX />}
                 </div>
 
             </section>
