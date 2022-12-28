@@ -30,17 +30,14 @@ export default () => {
             </section>
             <section className="right-content">
                 <div className="content-top-bar">
-                    <div className="open-icon" onClick={() => setOpenMenu(!openMenu)}>
-                        {
-                            openMenu ? [<MenuUnfoldOutlined />] : [<MenuFoldOutlined />]
-                        }
-                    </div>
-                    <div className="current-subtitle" style={{ paddingRight: `${openMenu && document.body.clientWidth > 786 ? '300px' : 0}` }}>
-                        这是标题
-                    </div>
-                    <div className="open-icon-slot">
-                        <MenuUnfoldOutlined />
-                    </div>
+                        <div className="open-icon" onClick={() => setOpenMenu(!openMenu)}>
+                            {
+                                openMenu ? [<MenuFoldOutlined />] : [<MenuUnfoldOutlined />]
+                            }
+                        </div>
+                        <div className="current-subtitle">
+                            这是标题
+                        </div>
                 </div>
                 <div className="content-mdx" onClick={clickNotPC}>
                     <Mdx ></Mdx>
