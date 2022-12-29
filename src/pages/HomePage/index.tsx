@@ -112,7 +112,7 @@ export default () => {
                 {/* 中间修饰 */}
                 <div className="cover-word">
                     <div className="word-top">
-                        Sakura Blog
+                    🍍Sakura Blog
                     </div>
                     <div className="word-bottom">
                         {letter}

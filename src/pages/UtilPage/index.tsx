@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { HeaderNav } from "../../components/HeaderNav"
 import './index.less'
+import { utilMap } from './utilMap'
 
 export default () => {
     const [letter, setLetter] = useState<string>('')
@@ -23,6 +24,33 @@ export default () => {
                     {letter}
                 </div>
             </div>
+            <section className='util-content'>
+                <div className="util-title">
+                    实用工具大全
+                </div>
+                <div className="util-box">
+                    {
+                        utilMap.map(util => {
+                            return (
+                                <div className="util-card" key={util.title}>
+                                    <div className="card-title">
+                                        {util.title}
+                                    </div>
+                                    <div className="card-des">
+                                        {util.des}
+                                    </div>
+                                    <div className="card-button" onClick={()=>window.open(util.ref,'_blank')}>
+                                        开始使用
+                                    </div>
+                                </div>
+                            )
+                        })
+                    }
+                </div>
+                <div className="util-buttom">
+                    <hr />
+                </div>
+            </section>
         </main>
     )
 }

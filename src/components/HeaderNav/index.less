@@ -11,7 +11,7 @@
         width: 20px;
         text-align: center;
         cursor: pointer;
-
+        font-size: 25px;
     }
 
     .nav-area {
@@ -20,11 +20,13 @@
         align-items: center;
         justify-content: space-between;
         list-style: none;
-        .github{
-            a{
+
+        .github {
+            a {
                 text-decoration: none;
             }
         }
+
         .nav-item {
             cursor: pointer;
             text-align: center;
@@ -32,7 +34,8 @@
             position: relative;
             display: inline-block;
             margin-right: 20px;
-            &::after{
+
+            &::after {
                 content: "";
                 width: 0;
                 height: 3px;
@@ -43,16 +46,19 @@
                 transition: all .4s ease-in-out;
                 border-radius: 2px;
             }
-            &:hover::after{
+
+            &:hover::after {
                 left: 0;
                 width: 100%;
             }
-            &:last-child{
-                &::after{
+
+            &:last-child {
+                &::after {
                     display: none;
                 }
-                &:hover::after{
-                 display: none;
+
+                &:hover::after {
+                    display: none;
                 }
             }
         }

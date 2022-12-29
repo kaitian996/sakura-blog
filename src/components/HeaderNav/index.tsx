@@ -8,7 +8,7 @@ export const HeaderNav: React.FC = () => {
     return (
         <nav className="header-nav">
             <div className="logo-area">
-                logo
+            🍍
             </div>
             <div className="nav-area">
                 <li onClick={() => router('/home')} className={`nav-item ${currentRouter === '/home' ? 'nav-active' : null}`}>首页</li>
