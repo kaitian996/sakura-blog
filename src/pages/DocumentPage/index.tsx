@@ -4,7 +4,7 @@ import './index.less'
 export default () => {
     const [letter, setLetter] = useState<string>('')
     useEffect(() => {
-        const letters: string = '文章'
+        const letters: string = '文档'
         const timer = setInterval(() => {
             if (letter.length < letters.length) {
                 setLetter(letters.slice(0, letter.length + 1))

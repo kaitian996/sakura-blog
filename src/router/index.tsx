@@ -1,7 +1,7 @@
 import { Navigate, RouteObject } from 'react-router-dom'
 import { lazy } from 'react'
 const HomePage = lazy(() => import('../pages/HomePage'))
-const ArticlePage = lazy(() => import('../pages/ArticlePage'))
+const DocumentPage = lazy(() => import('../pages/DocumentPage'))
 const SocureCodePage = lazy(() => import('../pages/SocureCodePage'))
 const CodeDetail = lazy(() => import('../pages/CodeDetailPage'))
 const UtilPage = lazy(() => import('../pages/UtilPage'))
@@ -15,8 +15,8 @@ export const routes: RouteObject[] = [
         element: <HomePage />
     },
     {
-        path: '/article',
-        element: <ArticlePage />
+        path: '/document',
+        element: <DocumentPage />
     },
     {
         path: '/socureCode',

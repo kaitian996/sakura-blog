@@ -81,9 +81,9 @@ export default () => {
     }[] = [
             {
                 icon: sketch,
-                title: '文章',
-                text: '学习不同的知识，领会不同的逻辑',
-                route: '/article'
+                title: '文档',
+                text: '丰富的文档集合，全面具体',
+                route: '/document'
             },
             {
                 icon: code,
