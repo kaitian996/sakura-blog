@@ -1,6 +1,7 @@
 import './index.less'
 import { HeaderNav } from '../../components/HeaderNav'
 import { useNavigate } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 export default () => {
     const router = useNavigate()
     const toDetail = (name: string) => {
@@ -68,12 +69,24 @@ export default () => {
             ]
         },
     ]
+    const [letter, setLetter] = useState<string>('')
+    useEffect(() => {
+        const letters: string = '源码解析'
+        const timer = setInterval(() => {
+            if (letter.length < letters.length) {
+                setLetter(letters.slice(0, letter.length + 1))
+            } else {
+                clearInterval(timer)
+            }
+        }, 600)
+        return () => clearInterval(timer)
+    }, [letter])
     return (
         <main className='code-page'>
             <div className='cover-content'>
                 <HeaderNav />
                 <div className='cover-title'>
-                    源码解析
+                    {letter}
                 </div>
             </div>
             <section className='code-area'>

@@ -1,4 +1,5 @@
 import { useSearchParams } from "react-router-dom"
+import React, { useMemo } from "react"
 import './index.less'
 import { docMap } from './docMap'
 import { useState } from "react"
@@ -7,7 +8,7 @@ export default () => {
     const [params] = useSearchParams()
     const currentDoc = docMap.find((item) => item.title === params.get('name'))
     const [currentIndex, setCurrentIndex] = useState(0)
-    const CurrentMDX = currentDoc?.doc[currentIndex].mdx
+    const CurrentMDX = useMemo(() => currentDoc?.doc[currentIndex].mdx, [currentIndex])
     const [openMenu, setOpenMenu] = useState(false)
     const clickNotPC = () => {
         const width = document.body.clientWidth
@@ -27,8 +28,8 @@ export default () => {
                     currentDoc?.doc.map((item, index) => {
                         return (
                             <div className="menu-item" key={item.subtitle} onClick={() => {
-                                setCurrentIndex(index)
                                 clickNotPC()
+                                setCurrentIndex(index)
                             }}>
                                 <div className={`item ${currentIndex === index ? 'item-active' : ''}`}>
                                     {item.subtitle}
