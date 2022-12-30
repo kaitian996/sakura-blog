@@ -37,7 +37,7 @@ export default () => {
                                 </div>
                                 <div className="document-container">
                                     {
-                                        doc.item.map(item => {
+                                        doc.items.map(item => {
                                             return (
                                                 <div className="document-content" key={item.title} onClick={()=>window.open(item.ref,'_blank')}>
                                                     <div className="document-icon">

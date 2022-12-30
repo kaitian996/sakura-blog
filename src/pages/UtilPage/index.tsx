@@ -49,6 +49,7 @@ export default () => {
                 </div>
                 <div className="util-buttom">
                     <hr />
+                    <div className="util-not">其它网站收集，仅供个人使用</div>
                 </div>
             </section>
         </main>
