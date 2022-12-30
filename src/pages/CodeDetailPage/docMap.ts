@@ -1,30 +1,71 @@
-import Mdx from './doc/hello.mdx'
-import Mdx2 from './doc/hello2.mdx'
-
+import Default from './doc/default.mdx'
+import reactivity from './doc/mini-vue/reactivity.mdx'
 export const docMap = [
     {
         title: 'Mini-React',
         doc: [
             {
-                subtitle: 'ReactDOM',
-                mdx: Mdx
-            },
-            {
-                subtitle: 'ReactDOM1',
-                mdx: Mdx2
-            },
-            {
-                subtitle: 'ReactDOM2',
-                mdx: Mdx
-            },
-            {
-                subtitle: 'ReactDOM3',
-                mdx: Mdx
-            },
-            {
-                subtitle: 'ReactDOM4',
-                mdx: Mdx
+                subtitle: 'Default',
+                mdx: Default
             },
         ]
-    }
+    },
+    {
+        title: 'Mini-Vue',
+        doc: [
+            {
+                subtitle: 'reactivity',
+                mdx:reactivity
+            },
+            {
+                subtitle: 'Default',
+                mdx: Default
+            },
+        ]
+    },
+    {
+        title: 'Mini-Vite',
+        doc: [
+            {
+                subtitle: 'Default',
+                mdx: Default
+            },
+        ]
+    },
+    {
+        title: 'Mini-Babel',
+        doc: [
+            {
+                subtitle: 'Default',
+                mdx: Default
+            },
+        ]
+    },
+    {
+        title: 'Mini-Webpack',
+        doc: [
+            {
+                subtitle: 'Default',
+                mdx: Default
+            },
+        ]
+    },
+    {
+        title: 'sakuraframework',
+        doc: [
+            {
+                subtitle: 'Default',
+                mdx: Default
+            },
+        ]
+    },
+    {
+        title: 'show.js',
+        doc: [
+            {
+                subtitle: 'Default',
+                mdx: Default
+            },
+        ]
+    },
 ]
