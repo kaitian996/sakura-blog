@@ -10,6 +10,10 @@ export default defineConfig(async () => {
         plugins: [
             react(),
             mdx.default({ remarkPlugins: [[remarkCodeHike, { theme, lineNumbers: true, showCopyButton: true }]] }),
-        ]
+        ],
+        base: './',
+        build:{
+            outDir:'docs'
+        }
     }
 })
